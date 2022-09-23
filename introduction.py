@@ -84,7 +84,7 @@ class Ui_MainWindow_intro(object):
 
     def retranslateUi(self, MainWindow_intro):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow_intro.setWindowTitle(_translate("MainWindow_intro", "Sofi - Introduction"))
+        MainWindow_intro.setWindowTitle(_translate("MainWindow_intro", "AOS - Introduction"))
         self.label_Intro.setToolTip(_translate("MainWindow_intro", "Introduction"))
         self.label_Intro.setText(_translate("MainWindow_intro", "INTRODUCTION"))
         self.label.setToolTip(_translate("MainWindow_intro", "Introduction"))
