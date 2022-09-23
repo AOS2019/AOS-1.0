@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>logo.ico</file>
+    <file>send.png</file>
+    <file>send_icon.png</file>
+    <file>listening.gif</file>
+    <file>banner.png</file>
+    <file>logo.png</file>
+  </qresource>
+</RCC>
