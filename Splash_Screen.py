@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
     
     def intro(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = introduction.Ui_MainWindow_into()
+        self.ui = introduction.Ui_MainWindow_intro()
         self.ui.setupUi(self.window)
         self.window.show()
         self.str_cont = self.ui.label.text()
@@ -62,7 +62,7 @@ class Ui_MainWindow(object):
         
         self.label = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.label.setEnabled(True)
-        self.label.setStyleSheet("background-image: url(:/images/banner.png);")
+        self.label.setStyleSheet("background-image: url(:/newPrefix/banner.png);")
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap(":/newPrefix/banner.png"))
         self.label.setScaledContents(True)
