@@ -7,17 +7,30 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+# from distutils.cmd import Command
 
-class Ui_MainWindow_Intro(object):
-    def setupUi(self, MainWindow_Intro):
-        MainWindow_Intro.setObjectName("MainWindow_Intro")
-        MainWindow_Intro.resize(580, 390)
+from Main_Window import Ui_MainWindow_main
+import manage
+import time
+
+
+class Ui_MainWindow_intro(object):
+    def mainWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow_main()
+        self.ui.setupUi(self.window)
+        self.window.show()
+        manage.response("")
+        #manage.command()
+    def setupUi(self, MainWindow_intro):
+        MainWindow_intro.setObjectName("MainWindow_intro")
+        MainWindow_intro.resize(580, 390)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/newPrefix/images/RGU_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        MainWindow_Intro.setWindowIcon(icon)
-        MainWindow_Intro.setStyleSheet("background-color: rgb(223, 223, 223);")
-        MainWindow_Intro.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedKingdom))
-        self.centralwidget = QtWidgets.QWidget(MainWindow_Intro)
+        icon.addPixmap(QtGui.QPixmap(":/newPrefix/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow_intro.setWindowIcon(icon)
+        MainWindow_intro.setStyleSheet("background-color: rgb(223, 223, 223);")
+        MainWindow_intro.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedKingdom))
+        self.centralwidget = QtWidgets.QWidget(MainWindow_intro)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(39, 19, 501, 331))
@@ -60,52 +73,55 @@ class Ui_MainWindow_Intro(object):
         self.label.setOpenExternalLinks(False)
         self.label.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.label.setObjectName("label")
-        self.pushButton_Skip = QtWidgets.QPushButton(self.frame)
-        self.pushButton_Skip.setGeometry(QtCore.QRect(210, 280, 70, 30))
-        self.pushButton_Skip.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_Skip.setToolTipDuration(1)
-        self.pushButton_Skip.setStyleSheet("font: 9pt \"Verdana\";")
-        self.pushButton_Skip.setAutoDefault(True)
-        self.pushButton_Skip.setFlat(False)
-        self.pushButton_Skip.setObjectName("pushButton_Skip")
-        self.pushButton_Nxt = QtWidgets.QPushButton(self.frame)
-        self.pushButton_Nxt.setGeometry(QtCore.QRect(360, 280, 70, 30))
-        self.pushButton_Nxt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_Nxt.setToolTipDuration(1)
-        self.pushButton_Nxt.setStyleSheet("font: 9pt \"Verdana\";")
-        self.pushButton_Nxt.setAutoDefault(True)
-        self.pushButton_Nxt.setObjectName("pushButton_Nxt")
-        MainWindow_Intro.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow_Intro)
+        
+        MainWindow_intro.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow_intro)
         self.statusbar.setObjectName("statusbar")
-        MainWindow_Intro.setStatusBar(self.statusbar)
+        MainWindow_intro.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow_Intro)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow_Intro)
+        self.retranslateUi(MainWindow_intro)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow_intro)
 
-    def retranslateUi(self, MainWindow_Intro):
+    def retranslateUi(self, MainWindow_intro):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow_Intro.setWindowTitle(_translate("MainWindow_Intro", "Sofi - Introduction"))
-        self.label_Intro.setToolTip(_translate("MainWindow_Intro", "Introduction"))
-        self.label_Intro.setText(_translate("MainWindow_Intro", "INTRODUCTION"))
-        self.label.setToolTip(_translate("MainWindow_Intro", "Introduction"))
-        self.label.setText(_translate("MainWindow_Intro", "AOS 1.0 is a virtual assistant. It\'s set up to do simple things like play music, surf the web, and view YouTube videos.\n"
+        MainWindow_intro.setWindowTitle(_translate("MainWindow_intro", "Sofi - Introduction"))
+        self.label_Intro.setToolTip(_translate("MainWindow_intro", "Introduction"))
+        self.label_Intro.setText(_translate("MainWindow_intro", "INTRODUCTION"))
+        self.label.setToolTip(_translate("MainWindow_intro", "Introduction"))
+        self.label.setText(_translate("MainWindow_intro", "AOS 1.0 is a virtual assistant. It\'s set up to do simple things like play music, surf the web, and view YouTube videos.\n"
 "\n"
 "\n"
 "\n"
 "In order to make it more accessible, it has been designed to function some of the time offline."))
-        self.pushButton_Skip.setToolTip(_translate("MainWindow_Intro", "<html><head/><body><p align=\"center\">skip</p></body></html>"))
-        self.pushButton_Skip.setText(_translate("MainWindow_Intro", "Skip"))
-        self.pushButton_Nxt.setToolTip(_translate("MainWindow_Intro", "<html><head/><body><p align=\"center\"><span style=\" font-size:9pt;\">Next Button</span></p></body></html>"))
-        self.pushButton_Nxt.setText(_translate("MainWindow_Intro", "Next"))
+        self.label.text()
+        
+        
+    def respd(self):
+        self.str_cont = ui.label.text()
+        manage.response(self.str_cont)
+
+
+    n = 100
+    def com_wait(self, n):
+        completed = 0
+        for i in range(n):
+                time.sleep(0.01)
+                completed += 1
+                if completed == 99:
+                        self.mainWindow()
+
 import image_assets
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow_Intro = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow_Intro()
-    ui.setupUi(MainWindow_Intro)
-    MainWindow_Intro.show()
+    MainWindow_intro = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow_intro()
+    ui.setupUi(MainWindow_intro)
+    MainWindow_intro.show()
+    manage.response("")
+    ui.respd()
+    ui.com_wait(100)
+    MainWindow_intro.close()
     sys.exit(app.exec_())
