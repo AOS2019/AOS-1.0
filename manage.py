@@ -68,7 +68,7 @@ def command():
 
 #play music function
 def Play_Music():
-    music_dir = 'C:\\Users\\mitchel\\Music'
+    music_dir = 'C:\\Users\\Lenovo\\Music'
     songs = os.listdir(music_dir)
     os.startfile(os.path.join(music_dir, songs[0]))
     
