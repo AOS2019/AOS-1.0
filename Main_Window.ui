@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>MainWindow_main</class>
+ <widget class="QMainWindow" name="MainWindow_main">
   <property name="windowModality">
    <enum>Qt::ApplicationModal</enum>
   </property>
@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -26,11 +26,11 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Sofi 1.0 - Main</string>
+   <string>AOS 1.0 - Main</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Sofi_images.qrc">
-    <normaloff>:/newPrefix/images/RGU_logo.png</normaloff>:/newPrefix/images/RGU_logo.png</iconset>
+   <iconset resource="assets/Image_assets.qrc">
+    <normaloff>:/newPrefix/logo.png</normaloff>:/newPrefix/logo.png</iconset>
   </property>
   <property name="toolTip">
    <string>Main Window</string>
@@ -51,10 +51,10 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>311</width>
-      <height>221</height>
+      <x>20</x>
+      <y>270</y>
+      <width>551</width>
+      <height>121</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -64,9 +64,9 @@
         <bool>true</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 255);
+        <string notr="true">background-color: rgb(255, 255, 255);
 font: 12pt &quot;Verdana&quot;;
-border-color: rgb(0, 170, 0);
+border-color: rgb(255, 180, 0);
 color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
@@ -100,6 +100,12 @@ color: rgb(0, 0, 0);</string>
        <property name="toolTipDuration">
         <number>1</number>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Verdana&quot;;
+border-color: rgb(255, 180, 0);
+color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -112,21 +118,33 @@ color: rgb(0, 0, 0);</string>
      <rect>
       <x>480</x>
       <y>470</y>
-      <width>74</width>
-      <height>71</height>
+      <width>82</width>
+      <height>72</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <property name="spacing">
-      <number>10</number>
+      <number>0</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
      </property>
      <item>
       <widget class="QPushButton" name="pushButton_Send">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>70</height>
+        </size>
        </property>
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
@@ -147,16 +165,16 @@ color: rgb(0, 0, 0);</string>
         <bool>false</bool>
        </property>
        <property name="text">
-        <string/>
+        <string extracomment="Send"/>
        </property>
        <property name="icon">
-        <iconset resource="Sofi_images.qrc">
-         <normaloff>:/newPrefix/send_icon.png</normaloff>:/newPrefix/send_icon.png</iconset>
+        <iconset resource="assets/Image_assets.qrc">
+         <normaloff>:/newPrefix/send.png</normaloff>:/newPrefix/send.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>60</width>
-         <height>60</height>
+         <width>80</width>
+         <height>69</height>
         </size>
        </property>
        <property name="checkable">
@@ -178,8 +196,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>10</y>
+      <x>10</x>
+      <y>20</y>
       <width>571</width>
       <height>200</height>
      </rect>
@@ -191,7 +209,7 @@ color: rgb(0, 0, 0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="Sofi_images.qrc">:/newPrefix/listening.gif</pixmap>
+     <pixmap resource="assets/Image_assets.qrc">:/newPrefix/listening.gif</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -327,7 +345,7 @@ color: rgb(0, 0, 0);</string>
   </widget>
  </widget>
  <resources>
-  <include location="Sofi_images.qrc"/>
+  <include location="assets/Image_assets.qrc"/>
  </resources>
  <connections/>
 </ui>
