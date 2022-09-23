@@ -90,7 +90,7 @@ def Tell_time():
 #interpret response
 def reply(query):
     if "what is your name" in query:
-        response("My name is Sofi  1.0, Your virtual assistant.")
+        response("My name is AOS  1.0, Your virtual assistant.")
     elif "play music" in query:
         Play_Music()
     elif "joke" in query:
